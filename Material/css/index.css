@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.atas {
+    background-image: url("../asset/brooke-lark-93583-unsplash.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.wadah {
+    width: 60%;
+    height: 200px;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.ket {
+    width: 100%;
+    padding: 0;
+}
