@@ -60,10 +60,9 @@ while ($row = mysqli_fetch_array($data)) {
                     while ($lah = mysqli_fetch_assoc($isi)) {
                         $nilai = floor($lah['rating']);
                     }
-                    echo "<br>$nilai";
                     ?>
                         <br><br>
-                        <!--bintang bintangnya disini gak muncul T_T -->
+                        <!--bintang bintanya disini gak muncul T_T -->
                         <select class="rating_2">
                             <option value="1" <?php if ($nilai == 1) echo "selected" ?>>1</option>
                             <option value="2" <?php if ($nilai == 2) echo "selected" ?>>2</option>
@@ -83,23 +82,4 @@ while ($row = mysqli_fetch_array($data)) {
 }
 }
 ?>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="../Material/js/materialize.js"></script>
-    <script src="../Material/js/init.js"></script>
-    <script src="../Material/js/jquery.barrating.min.js"></script>
-    <script>
-        $(function() {
-            $('.rating_2').barrating({
-                theme: 'fontawesome-stars',
-                readonly: true,
-
-            });
-        });
-    </script>
-
-
-
 </body> 

@@ -8,6 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const cariResep = () => {
         ajax.onload = function() {
             dataResep.innerHTML = this.responseText
+
+            $(function() {
+                $('.rating_2').barrating({
+                    theme: 'fontawesome-stars',
+                    readonly: true,
+
+                });
+            });
+
         }
 
         ajax.open('GET', 'dataresep.php?page=' + page + '&cariResep=' + katakunci.value, true);
@@ -15,15 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     cariResep()
-    console.log("Olo")
+
 
     katakunci.addEventListener('keyup', cariResep);
-
-    $(function() {
-        $('.rating_2').barrating({
-            theme: 'fontawesome-stars',
-            readonly: true,
-
-        });
-    });
 })

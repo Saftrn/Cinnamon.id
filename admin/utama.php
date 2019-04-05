@@ -18,6 +18,9 @@ require_once '../config.php';
     <link href="../Material/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="../Material/css/public.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Material/css/fontawesome-stars.css">
+
 
     <style>
         .carousel-item {
@@ -142,13 +145,23 @@ require_once '../config.php';
                         <?php $harga = number_format($barang['biaya'], 0, ',', '.'); ?>
                         <h5 style="color:black;">Rp. <?php echo $harga ?></h5>
                         <a href="hapus.php?delete=<?php echo $barang['id_resep'] ?>"><button class=" btn pink darken-1" name="delete" style="border-radius:7px;">delete</button></a>
-                        <div clas="ikon" style="margin-top:20px">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                        <?php 
+
+                        $nilai = 0;
+                        $isi = mysqli_query($connect, "SELECT AVG(nilai) as rating FROM rating WHERE id_resep=$barang[id_resep]");
+                        while ($data = mysqli_fetch_assoc($isi)) {
+                            $nilai = floor($data['rating']);
+                        }
+
+                        ?>
+                        <br><br>
+                        <select class="rating_2">
+                            <option value="1" <?php if ($nilai == 1) echo "selected" ?>>1</option>
+                            <option value="2" <?php if ($nilai == 2) echo "selected" ?>>2</option>
+                            <option value="3" <?php if ($nilai == 3) echo "selected" ?>>3</option>
+                            <option value="4" <?php if ($nilai == 4) echo "selected" ?>>4</option>
+                            <option value="5" <?php if ($nilai == 5) echo "selected" ?>>5</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -216,6 +229,14 @@ require_once '../config.php';
         $('.carousel.carousel-slider').carousel({
             fullWidth: true,
             indicators: true
+        });
+
+        $(function() {
+            $('.rating_2').barrating({
+                theme: 'fontawesome-stars',
+                readonly: true,
+
+            });
         });
     </script>
     <!-- <script>
