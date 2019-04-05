@@ -91,7 +91,7 @@ require_once '../config.php';
         <br>
         <div class="section transparent" style="padding-bottom:0px">
             <div class="container" style="margin-top: -20px;">
-                <h2 style="font-family:Berlin Sans FB;">Hasil Pencarian</h2>
+                <h2 class="brown-text text-darken-4" style="font-family:Berlin Sans FB;">Hasil Pencarian</h2>
             </div>
 
             <br>
@@ -170,4 +170,4 @@ require_once '../config.php';
 
 </body>
 
-</html> 
+</html>
