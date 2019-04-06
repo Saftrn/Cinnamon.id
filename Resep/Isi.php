@@ -115,7 +115,7 @@ if (isset($_GET['rating'])) {
                     <div class="isi" style="text-align:center">
                         <br>
                         <input type="hidden" name="rating" value="0" />
-                        <h5>Beri resep ini rating!</h5>
+                        <h5>Beri resep ini rating</h5>
 
                         <form action="" method="GET">
                             <input type="hidden" value="<?php echo $id ?>" name="id" />
@@ -126,7 +126,8 @@ if (isset($_GET['rating'])) {
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                             </select>
-                            <button type="submit" class="btn waves-effect waves-light brown darken-4" value="submit">submit</button>
+                            <textarea style="margin:auto;width:40%;" cols="55" rows="55" placeholder="bagaimana pendapatmu tentang resep ini"></textarea><br>
+                            <button type="submit" class="btn waves-effect waves-light brown darken-4" style="width:40%" value="submit">kirim</button>
                         </form>
                         <br><br>
                     </div>
