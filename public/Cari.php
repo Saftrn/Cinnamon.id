@@ -88,7 +88,7 @@ require_once '../config.php';
 
             <br><br><br>
 
-            <?php 
+            <?php
             if (isset($_GET['cari'])) {
                 $cari = $_GET['cariResep'];
                 $cari = preg_replace("#[^0-9a-z]i#", "", $cari);
@@ -102,39 +102,39 @@ require_once '../config.php';
                     while ($row = mysqli_fetch_array($data)) {
 
                         ?>
-            <div class="section transparent" style="padding-bottom:0px">
-                <a href="../Resep/Isi.php?id=<?php echo $barang['id_resep'] ?>" style="color:black;">
-                    <div class="row container" style="margin-bottom:0px;">
-                        <div class="kotak z-depth-4 white">
-                            <div class="gambar">
-                                <img class="gambar-card" src="<?php echo $barang['gambar'] ?>">
-                            </div>
-                            <div class="informasi">
-                                <h4><b><?php echo $row['judul'] ?></b></h4>
-                                <h5>Rp. <?php echo $row['biaya'] ?></h5>
-                                <button class="btn brown darken-2" style="border-radius:7px;">cara membuat</button>
-                                <button class="btn brown darken-2" style="border-radius:7px;">bahan</button>
-                                <button class="btn brown darken-2" style="border-radius:7px;">alat</button>
-                                <br>
-                                <div clas="ikon" style="margin-top:20px">
-                                    <i class="fas fa-star" style="height:50px;"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                        <div class="section transparent" style="padding-bottom:0px">
+                            <a href="../Resep/Isi.php?id=<?php echo $barang['id_resep'] ?>" style="color:black;">
+                                <div class="row container" style="margin-bottom:0px;">
+                                    <div class="kotak z-depth-4 white">
+                                        <div class="gambar">
+                                            <img class="gambar-card" src="<?php echo $barang['gambar'] ?>">
+                                        </div>
+                                        <div class="informasi">
+                                            <h4><b><?php echo $row['judul'] ?></b></h4>
+                                            <h5>Rp. <?php echo $row['biaya'] ?></h5>
+                                            <button class="btn brown darken-2" style="border-radius:7px;">cara membuat</button>
+                                            <button class="btn brown darken-2" style="border-radius:7px;">bahan</button>
+                                            <button class="btn brown darken-2" style="border-radius:7px;">alat</button>
+                                            <br>
+                                            <div clas="ikon" style="margin-top:20px">
+                                                <i class="fas fa-star" style="height:50px;"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                                <br><br>
                         </div>
-                    </div>
-                    <br><br>
-            </div>
-            </a>
+                        </a>
 
-            <br><br><br>
-            <?php 
-        }
-    }
-} ?>
+                        <br><br><br>
+                    <?php
+                }
+            }
+        } ?>
         </div>
         <br><br><br>
         <footer class="page-footer brown darken-2">
@@ -185,4 +185,4 @@ require_once '../config.php';
 
 </body>
 
-</html> 
+</html>
