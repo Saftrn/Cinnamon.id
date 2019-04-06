@@ -82,62 +82,62 @@ if (isset($_GET['rating'])) {
             $dataResep = mysqli_query($connect,  "SELECT * FROM tbl_resep WHERE id_resep = '$id'");
             while ($barang = mysqli_fetch_assoc($dataResep)) {
                 ?>
-        <div class="container">
-            <h1 style="padding-left:5%"><b><?php echo $barang['judul'] ?></b></h1>
-            <div class="gambar">
-                <img class="gambar-card" src="../<?php echo $barang['gambar'] ?>" width="100%" height="100%" style="border-radius:27px">
-            </div>
-            <div class="isi" style="padding-left:5%; padding-right:5%">
-                <?php $harga = number_format($barang['biaya'], 0, ',', '.'); ?>
-                <h5 style="color:black;">Rp. <?php echo $harga ?></h5>
+                <div class="container">
+                    <h2 class="brown-text text-darken-4" style="padding-left:5%"><b><?php echo $barang['judul'] ?></b></h2>
+                    <div class="gambar">
+                        <img class="gambar-card" src="../<?php echo $barang['gambar'] ?>" width="100%" height="100%" style="border-radius:27px">
+                    </div>
+                    <div class="isi" style="padding-left:5%; padding-right:5%">
+                        <?php $harga = number_format($barang['biaya'], 0, ',', '.'); ?>
+                        <h5 style="color:black;">Rp. <?php echo $harga ?></h5>
 
-                <?php
-                $nilai = 0;
-                $isi = mysqli_query($connect, "SELECT AVG(nilai) as rating FROM rating WHERE id_resep=$id");
-                while ($data = mysqli_fetch_assoc($isi)) {
-                    $nilai = floor($data['rating']);
-                }
+                        <?php
+                        $nilai = 0;
+                        $isi = mysqli_query($connect, "SELECT AVG(nilai) as rating FROM rating WHERE id_resep=$id");
+                        while ($data = mysqli_fetch_assoc($isi)) {
+                            $nilai = floor($data['rating']);
+                        }
 
-                ?>
-                <select id="rating_2">
-                    <option value="1" <?php if ($nilai == 1) echo "selected" ?>>1</option>
-                    <option value="2" <?php if ($nilai == 2) echo "selected" ?>>2</option>
-                    <option value="3" <?php if ($nilai == 3) echo "selected" ?>>3</option>
-                    <option value="4" <?php if ($nilai == 4) echo "selected" ?>>4</option>
-                    <option value="5" <?php if ($nilai == 5) echo "selected" ?>>5</option>
-                </select>
-                <h5>Porsi <?php echo $barang['porsi']; ?></h5>
-                <br>
-                <?php echo $barang['prosedur'] ?>
-                <br><br><br>
-            </div>
+                        ?>
+                        <select id="rating_2">
+                            <option value="1" <?php if ($nilai == 1) echo "selected" ?>>1</option>
+                            <option value="2" <?php if ($nilai == 2) echo "selected" ?>>2</option>
+                            <option value="3" <?php if ($nilai == 3) echo "selected" ?>>3</option>
+                            <option value="4" <?php if ($nilai == 4) echo "selected" ?>>4</option>
+                            <option value="5" <?php if ($nilai == 5) echo "selected" ?>>5</option>
+                        </select>
+                        <h5>Porsi <?php echo $barang['porsi']; ?></h5>
+                        <br>
+                        <?php echo $barang['prosedur'] ?>
+                        <br><br><br>
+                    </div>
 
-            <div class="isi" style="text-align:center">
-                <br>
-                <input type="hidden" name="rating" value="0" />
-                <h5>Beri resep ini rating!</h5>
+                    <div class="isi" style="text-align:center">
+                        <br>
+                        <input type="hidden" name="rating" value="0" />
+                        <h5>Beri resep ini rating!</h5>
 
-                <form action="" method="GET">
-                    <input type="hidden" value="<?php echo $id ?>" name="id" />
-                    <select id="rating" name="rating">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <input type="submit" value="submit" />
-                </form>
+                        <form action="" method="GET">
+                            <input type="hidden" value="<?php echo $id ?>" name="id" />
+                            <select id="rating" name="rating">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <button type="submit" class="btn waves-effect waves-light brown darken-4" value="submit">submit</button>
+                        </form>
+                        <br><br>
+                    </div>
+                </div>
+
                 <br><br>
-            </div>
-        </div>
 
-        <br><br>
-
-        <?php 
+            <?php
+        }
     }
-}
-?>
+    ?>
         <br><br><br><br><br>
         <!--  Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -161,4 +161,4 @@ if (isset($_GET['rating'])) {
 
 </body>
 
-</html> 
+</html>
