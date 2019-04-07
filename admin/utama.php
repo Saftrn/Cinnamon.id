@@ -126,7 +126,7 @@ require_once '../config.php';
                 <br>
                 <h1 class="brown-text text-darken-4" style="font-family:Berlin Sans FB;font-color:#EAD0A9;">Data Resep</h1>
             </div>
-            <?php 
+            <?php
             $dataResep = mysqli_query($connect,  "SELECT * FROM tbl_resep");
 
             if (mysqli_num_rows($dataResep) == 0) {
@@ -134,43 +134,44 @@ require_once '../config.php';
             } else {
                 while ($barang = mysqli_fetch_assoc($dataResep)) {
                     ?>
-            <div class="row container" style="margin-bottom:0px;">
-                <div class="kotak z-depth-4 white">
-                    <div class="gambar">
-                        <img class="gambar-card" src="../<?php echo $barang['gambar'] ?>">
+                    <div class="row container" style="margin-bottom:0px;">
+                        <div class="kotak z-depth-4 white">
+                            <div class="gambar">
+                                <img class="gambar-card" src="../<?php echo $barang['gambar'] ?>">
+                            </div>
+
+                            <div class="informasi">
+                                <h4 style="color:black;"><b><?php echo $barang['judul'] ?></b></h4>
+                                <?php $harga = number_format($barang['biaya'], 0, ',', '.'); ?>
+                                <h5 style="color:black;">Rp. <?php echo $harga ?></h5>
+                                <a href="hapus.php?delete=<?php echo $barang['id_resep'] ?>"><button class=" btn pink darken-1" name="delete" style="border-radius:7px;">delete</button></a>
+                                <a href="edit.php?edit=<?php echo $barang['id_resep'] ?>"><button class="btn cyan darken-4" name="edit" style="border-radius:7px;">edit</button></a>
+                                <?php
+
+                                $nilai = 0;
+                                $isi = mysqli_query($connect, "SELECT AVG(nilai) as rating FROM rating WHERE id_resep=$barang[id_resep]");
+                                while ($data = mysqli_fetch_assoc($isi)) {
+                                    $nilai = floor($data['rating']);
+                                }
+
+                                ?>
+                                <br><br>
+                                <select class="rating_2">
+                                    <option value="1" <?php if ($nilai == 1) echo "selected" ?>>1</option>
+                                    <option value="2" <?php if ($nilai == 2) echo "selected" ?>>2</option>
+                                    <option value="3" <?php if ($nilai == 3) echo "selected" ?>>3</option>
+                                    <option value="4" <?php if ($nilai == 4) echo "selected" ?>>4</option>
+                                    <option value="5" <?php if ($nilai == 5) echo "selected" ?>>5</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
+                    </a>
+                    <br><br>
 
-                    <div class="informasi">
-                        <h4 style="color:black;"><b><?php echo $barang['judul'] ?></b></h4>
-                        <?php $harga = number_format($barang['biaya'], 0, ',', '.'); ?>
-                        <h5 style="color:black;">Rp. <?php echo $harga ?></h5>
-                        <a href="hapus.php?delete=<?php echo $barang['id_resep'] ?>"><button class=" btn pink darken-1" name="delete" style="border-radius:7px;">delete</button></a>
-                        <?php 
-
-                        $nilai = 0;
-                        $isi = mysqli_query($connect, "SELECT AVG(nilai) as rating FROM rating WHERE id_resep=$barang[id_resep]");
-                        while ($data = mysqli_fetch_assoc($isi)) {
-                            $nilai = floor($data['rating']);
-                        }
-
-                        ?>
-                        <br><br>
-                        <select class="rating_2">
-                            <option value="1" <?php if ($nilai == 1) echo "selected" ?>>1</option>
-                            <option value="2" <?php if ($nilai == 2) echo "selected" ?>>2</option>
-                            <option value="3" <?php if ($nilai == 3) echo "selected" ?>>3</option>
-                            <option value="4" <?php if ($nilai == 4) echo "selected" ?>>4</option>
-                            <option value="5" <?php if ($nilai == 5) echo "selected" ?>>5</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            </a>
-            <br><br>
-
-            <?php 
-        }
-    } ?>
+                <?php
+            }
+        } ?>
             <br><br><br>
         </div>
 
@@ -247,4 +248,4 @@ require_once '../config.php';
 
 </body>
 
-</html> 
+</html>

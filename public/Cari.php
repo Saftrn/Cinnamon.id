@@ -38,7 +38,7 @@ require_once '../config.php';
         <div class="navbar-fixed">
             <nav class="brown darken-2" role="navigation">
                 <div class="nav-wrapper container">
-                    <a id="logo-container" href="../../index.html" class="brand-logo"><img src="../Material/asset/Logo/cinnamon2.png" height="50px"></a>
+                    <a id="logo-container" href="#" class="brand-logo"><img src="../Material/asset/Logo/cinnamon2.png" height="50px"></a>
                     <a data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a class="brown-text text-lighten-5" href="../public/Cari.php">Cari Resep</a></li>
@@ -72,71 +72,38 @@ require_once '../config.php';
         <div class="cari">
             <div class="container">
                 <br><br>
-                <form action="Cari.php" method="get">
-                    <h4 class="brown-text text-darken-2">Cari Resep</h4>
-                    <input class="isi" type="text" name="cariResep" placeholder="cari resep">
-                    <input class="btn brown darken-2" type="submit" name="cari" value="cari" style="width:100%;">
+                <h4 class="brown-text text-darken-2">Cari Resep</h4>
+                <form action="cari.php" method="get">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input class="brown-text text-darken-4" id="kataKunci" name="cariResep" type="text">
+                            <label for="mulai">Masukan judul</label>
+                        </div>
+                    </div>
+                    <input class="btn brown darken-2" type="submit" name="page" value="cari" style="width:100%;">
                 </form>
             </div>
         </div>
 
-        <br><br><br>
+        <br>
         <div class="section transparent" style="padding-bottom:0px">
             <div class="container" style="margin-top: -20px;">
-                <h2 style="font-family:Berlin Sans FB;">Hasil Pencarian</h2>
+                <h2 class="brown-text text-darken-4" style="font-family:Berlin Sans FB;">Hasil Pencarian</h2>
             </div>
+
+            <br>
+
+
+
+            <!--dataresep.php-->
+            <div id="dataresep">
+
+            </div>
+
 
             <br><br><br>
 
-            <?php
-            if (isset($_GET['cari'])) {
-                $cari = $_GET['cariResep'];
-                $cari = preg_replace("#[^0-9a-z]i#", "", $cari);
-                $data = mysqli_query($connect, "select * from resep where judul like '%" . $cari . "%'");
-
-                $count = mysqli_num_rows($data);
-                if ($count == 0) {
-                    $output = "There was no search results!";
-                } else {
-
-                    while ($row = mysqli_fetch_array($data)) {
-
-                        ?>
-                        <div class="section transparent" style="padding-bottom:0px">
-                            <a href="../Resep/Isi.php?id=<?php echo $barang['id_resep'] ?>" style="color:black;">
-                                <div class="row container" style="margin-bottom:0px;">
-                                    <div class="kotak z-depth-4 white">
-                                        <div class="gambar">
-                                            <img class="gambar-card" src="<?php echo $barang['gambar'] ?>">
-                                        </div>
-                                        <div class="informasi">
-                                            <h4><b><?php echo $row['judul'] ?></b></h4>
-                                            <h5>Rp. <?php echo $row['biaya'] ?></h5>
-                                            <button class="btn brown darken-2" style="border-radius:7px;">cara membuat</button>
-                                            <button class="btn brown darken-2" style="border-radius:7px;">bahan</button>
-                                            <button class="btn brown darken-2" style="border-radius:7px;">alat</button>
-                                            <br>
-                                            <div clas="ikon" style="margin-top:20px">
-                                                <i class="fas fa-star" style="height:50px;"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br><br>
-                        </div>
-                        </a>
-
-                        <br><br><br>
-                    <?php
-                }
-            }
-        } ?>
         </div>
-        <br><br><br>
         <footer class="page-footer brown darken-2">
             <div class="container">
                 <div class="row">
@@ -174,9 +141,24 @@ require_once '../config.php';
         </footer>
 
         <!--  Scripts-->
+        <script>
+            const page = 'cari';
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="../Material/js/materialize.js"></script>
         <script src="../Material/js/init.js"></script>
+        <script src="../Material/js/ajax.js"></script>
+        <script src="../Material/js/jquery.barrating.min.js"></script>
+        <script type="text/javascript">
+            // $(function() {
+            //     $('.rating_2').barrating({
+            //         theme: 'fontawesome-stars',
+            //         readonly: true,
+
+            //     });
+            // });
+        </script>
         <!-- <script>
             $('.kotak').click((event) => {
                 window.location.href = "http://localhost/Web_Coding/Resep/Isi.php";
