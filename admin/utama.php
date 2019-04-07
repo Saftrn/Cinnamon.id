@@ -68,8 +68,8 @@ require_once '../config.php';
                         <a id="logo-container" href="#" class="brand-logo"><img src="../Material/asset/Logo/cinnamon2.png" height="50px"></a>
                         <ul class="right hide-on-med-and-down">
                             <li><a class="card-panel brown-text text-darken-2 waves-effect waves-light btn" href="../user/Form.php" style="margin-top:6%;background-color:#EAD0A9 ;" href="Form.php"> Upload resep</a></li>
-                            <!-- <li><a class="brown-text text-lighten-5" href="../user/Cari.php">Cari Resep</a></li>
-                            <li><a class="brown-text text-lighten-5" href="../user/Badget.php">Budget</a></li>
+                            <li><a class="brown-text text-lighten-5" href="feedback.php">feedback</a></li>
+                            <!--<li><a class="brown-text text-lighten-5" href="../user/Badget.php">Budget</a></li>
                             <li><a class="brown-text text-lighten-5" href="../user/Bahan.php">Bahan</a></li> -->
                             <li>
                                 <a class="brown-text text-lighten-5" href="../index.html">
