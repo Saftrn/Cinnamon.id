@@ -101,9 +101,9 @@ require_once '../config.php';
         <div class="section transparent" style="padding-bottom:0px">
             <div class="row container">
                 <br><br>
-                <div class="carousel carousel-slider center">
+                <!--<div class="carousel carousel-slider center">
                     <div class="carousel-fixed-item center">
-                        <a class="btn waves-effect pink darken-1 white-text" href="artikel.php">Tambah Artikel</a>
+                         <a class="btn waves-effect pink darken-1 white-text" href="artikel.php">edit Tips</a>
                     </div>
                     <div class="carousel-item red white-text" href="#one!">
                         <h2><b>Kegunaan Rempah Untuk Kesehatan Jantung</b></h2>
@@ -121,17 +121,17 @@ require_once '../config.php';
                         <h2><b>8 Manfaat Air Tebu untuk Kesehatan</b></h2>
                         <p class="white-text">Selain rasanya yang segar, air tebu juga memiliki banyak manfaat bagi kesehatan tubuh. Simak penjelasannya berikut ini...</p>
                     </div>
-                </div>
+                </div>-->
                 <br>
                 <div class="kotak z-depth-4 white" style="height:">
                     <div class="container">
                         <h4 class="brown-text text-darken-4"><b>Cari Data Resep</b></h4>
-                        <form action="cari.php" method="get">
+                        <form action="utama.php" method="get">
                             <div class="input-field col s12">
                                 <input class="brown-text text-darken-4" id="kataKunci" name="cariResep" type="text">
                                 <label for="mulai">Masukan judul</label>
                             </div>
-                            <input class="btn brown darken-2" type="submit" name="page" value="cari" style="width:100%;">
+                            <input class="btn brown darken-2" type="submit" value="cari" style="width:100%;">
                         </form>
 
                     </div>
@@ -143,51 +143,73 @@ require_once '../config.php';
 
 
             <?php
-            $dataResep = mysqli_query($connect,  "SELECT * FROM tbl_resep");
 
-            if (mysqli_num_rows($dataResep) == 0) {
-                echo "<h1> Resep tidak ada</h1>";
-            } else {
-                while ($barang = mysqli_fetch_assoc($dataResep)) {
-                    ?>
-                    <div class="row container" style="margin-bottom:0px;">
-                        <div class="kotak z-depth-4 white">
-                            <div class="gambar">
-                                <img class="gambar-card" src="../<?php echo $barang['gambar'] ?>">
-                            </div>
+            function loadResep($keyword, $connect)
+            {
 
-                            <div class="informasi">
-                                <h4 style="color:black;"><b><?php echo $barang['judul'] ?></b></h4>
-                                <?php $harga = number_format($barang['biaya'], 0, ',', '.'); ?>
-                                <h5 style="color:black;">Rp. <?php echo $harga ?></h5>
-                                <a href="hapus.php?delete=<?php echo $barang['id_resep'] ?>"><button class=" btn pink darken-1" name="delete" style="border-radius:7px;">delete</button></a>
-                                <a href="edit.php?edit=<?php echo $barang['id_resep'] ?>"><button class="btn cyan darken-4" name="edit" style="border-radius:7px;">edit</button></a>
-                                <?php
+                $dataResep = mysqli_query($connect,  "SELECT * FROM tbl_resep");
 
-                                $nilai = 0;
-                                $isi = mysqli_query($connect, "SELECT AVG(nilai) as rating FROM rating WHERE id_resep=$barang[id_resep]");
-                                while ($data = mysqli_fetch_assoc($isi)) {
-                                    $nilai = floor($data['rating']);
-                                }
+                // if (isset($_GET['cariResep'])) {
+                // $cari = $_GET['cariResep'];
+                $query = "SELECT * FROM tbl_resep WHERE judul LIKE '%$keyword%'";
 
-                                ?>
-                                <br><br>
-                                <select class="rating_2">
-                                    <option value="1" <?php if ($nilai == 1) echo "selected" ?>>1</option>
-                                    <option value="2" <?php if ($nilai == 2) echo "selected" ?>>2</option>
-                                    <option value="3" <?php if ($nilai == 3) echo "selected" ?>>3</option>
-                                    <option value="4" <?php if ($nilai == 4) echo "selected" ?>>4</option>
-                                    <option value="5" <?php if ($nilai == 5) echo "selected" ?>>5</option>
-                                </select>
+                $cariResep = mysqli_query($connect, $query);
+
+                if (mysqli_num_rows($cariResep) == 0) {
+                    echo "<h1> Resep tidak ada</h1>";
+                } else {
+                    while ($data = mysqli_fetch_assoc($cariResep)) {
+                        ?>
+                        <div class="row container" style="margin-bottom:0px;">
+                            <div class="kotak z-depth-4 white">
+                                <div class="gambar">
+                                    <img class="gambar-card" src="../<?php echo $data['gambar'] ?>">
+                                </div>
+
+                                <div class="informasi">
+                                    <h4 style="color:black;"><b><?php echo $data['judul'] ?></b></h4>
+                                    <?php $harga = number_format($data['biaya'], 0, ',', '.'); ?>
+                                    <h5 style="color:black;">Rp. <?php echo $harga ?></h5>
+                                    <a href="hapus.php?delete=<?php echo $data['id_resep'] ?>"><button class=" btn pink darken-1" name="delete" style="border-radius:7px;">delete</button></a>
+                                    <a href="edit.php?edit=<?php echo $data['id_resep'] ?>"><button class="btn cyan darken-4" name="edit" style="border-radius:7px;">edit</button></a>
+                                    <?php
+
+                                    $nilai = 0;
+                                    $isi = mysqli_query($connect, "SELECT AVG(nilai) as rating FROM rating WHERE id_resep=$data[id_resep]");
+                                    while ($data = mysqli_fetch_assoc($isi)) {
+                                        $nilai = floor($data['rating']);
+                                    }
+
+                                    ?>
+                                    <br><br>
+                                    <select class="rating_2">
+                                        <option value="1" <?php if ($nilai == 1) echo "selected" ?>>1</option>
+                                        <option value="2" <?php if ($nilai == 2) echo "selected" ?>>2</option>
+                                        <option value="3" <?php if ($nilai == 3) echo "selected" ?>>3</option>
+                                        <option value="4" <?php if ($nilai == 4) echo "selected" ?>>4</option>
+                                        <option value="5" <?php if ($nilai == 5) echo "selected" ?>>5</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    </a>
-                    <br><br>
+                        </a>
+                        <br><br>
 
-                <?php
+                    <?php
+                }
             }
-        } ?>
+        }
+
+        if (isset($_GET['cariResep'])) {
+            $keyword = $_GET['cariResep'];
+            loadResep($keyword, $connect);
+        } else {
+            loadResep('', $connect);
+        }
+
+        // }
+
+        ?>
             <br><br><br>
         </div>
 
