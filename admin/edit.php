@@ -91,12 +91,9 @@
                 $biaya = $_POST['biaya'];
                 $prosedur = $_POST['editorProsedur'];
                 $bahan = $_POST['komposisi'];
-
                 $update = mysqli_query($connect, "UPDATE tbl_resep SET judul='$judul', porsi='$porsi', biaya=$biaya, prosedur='$prosedur', bahan='$bahan' WHERE id_resep=$id");
 
-                echo "data berhasil di update<br>";
-                var_dump($update);
-                exit;
+                header('location:utama.php?status=202');
             }
 
             ?>

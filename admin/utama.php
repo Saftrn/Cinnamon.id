@@ -17,7 +17,6 @@ require_once '../config.php';
     <link href="../Material/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="../Material/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="../Material/css/public.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link rel="stylesheet" href="../Material/css/fontawesome-stars.css">
 
@@ -69,9 +68,9 @@ require_once '../config.php';
                         <a id="logo-container" href="#" class="brand-logo"><img src="../Material/asset/Logo/cinnamon2.png" height="50px"></a>
                         <ul class="right hide-on-med-and-down">
                             <li><a class="card-panel brown-text text-darken-2 waves-effect waves-light btn" href="../user/Form.php" style="margin-top:6%;background-color:#EAD0A9 ;" href="Form.php"> Upload resep</a></li>
-                            <li><a class="brown-text text-lighten-5" href="../user/Cari.php">Cari Resep</a></li>
+                            <!-- <li><a class="brown-text text-lighten-5" href="../user/Cari.php">Cari Resep</a></li>
                             <li><a class="brown-text text-lighten-5" href="../user/Badget.php">Budget</a></li>
-                            <li><a class="brown-text text-lighten-5" href="../user/Bahan.php">Bahan</a></li>
+                            <li><a class="brown-text text-lighten-5" href="../user/Bahan.php">Bahan</a></li> -->
                             <li>
                                 <a class="brown-text text-lighten-5" href="../index.html">
                                     <b>Log Out</b>
@@ -124,8 +123,25 @@ require_once '../config.php';
                     </div>
                 </div>
                 <br>
-                <h1 class="brown-text text-darken-4" style="font-family:Berlin Sans FB;font-color:#EAD0A9;">Data Resep</h1>
+                <div class="kotak z-depth-4 white" style="height:">
+                    <div class="container">
+                        <h4 class="brown-text text-darken-4"><b>Cari Data Resep</b></h4>
+                        <form action="cari.php" method="get">
+                            <div class="input-field col s12">
+                                <input class="brown-text text-darken-4" id="kataKunci" name="cariResep" type="text">
+                                <label for="mulai">Masukan judul</label>
+                            </div>
+                            <input class="btn brown darken-2" type="submit" name="page" value="cari" style="width:100%;">
+                        </form>
+
+                    </div>
+
+                </div>
+                <br>
+                <h3 class="brown-text text-darken-4" style="font-family:Berlin Sans FB;">Data Resep</h1>
             </div>
+
+
             <?php
             $dataResep = mysqli_query($connect,  "SELECT * FROM tbl_resep");
 
@@ -214,11 +230,25 @@ require_once '../config.php';
         </div>
     </footer>
 
+    <?php
+
+    if (isset($_GET['status']) == 202) {
+        ?>
+        <script>
+            alert("update telah berhasil");
+        </script>
+    <?php
+}
+
+
+?>
 
     <!--  Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="../Material/js/materialize.js"></script>
     <script src="../Material/js/init.js"></script>
+    <script src="../Material/js/jquery.barrating.min.js"></script>
     <script>
         var instance = M.Carousel.init({
             fullWidth: true,
