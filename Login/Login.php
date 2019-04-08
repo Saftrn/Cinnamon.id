@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['username'])) {
+    header('location:../../../../Cinnamon.id/user/Main.php');
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -62,4 +70,4 @@
 
 </body>
 
-</html> 
+</html>

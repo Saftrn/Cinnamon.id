@@ -70,7 +70,7 @@ require_once '../config.php';
                             <li><a class="brown-text text-lighten-5" href="Badget.php">Budget</a></li>
                             <li><a class="brown-text text-lighten-5" href="Bahan.php">Bahan</a></li>
                             <li>
-                                <a class="brown-text text-lighten-5" href="../index.html">
+                                <a class="brown-text text-lighten-5" href="../Login/logout.php">
                                     <b>Keluar</b>
                                 </a>
                             </li>
