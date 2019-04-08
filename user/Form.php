@@ -1,5 +1,7 @@
 <?php
 error_reporting(0);
+if (isset($_GET['user'])) $user = $_GET['user'];
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +47,7 @@ error_reporting(0);
 
             ?>
 
-            <a class="waves-effect brown darken-3 waves-light btn-large" href="../user/Main.php" style="margin-top:5%;"><i class="material-icons left">arrow_backk</i>kembali</a>
+            <a class="waves-effect brown darken-3 waves-light btn-large" href="../user/Main.php?user=<?= $user?>" style="margin-top:5%;"><i class="material-icons left">arrow_backk</i>kembali</a>
             <h3>Upload Resep</h3>
             <div class="utama"><br>
                 <div class="row">

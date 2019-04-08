@@ -1,6 +1,7 @@
 <?php
 
 require_once '../config.php';
+if (isset($_GET['user'])) $user = $_GET['user'];
 
 ?>
 
@@ -40,15 +41,15 @@ require_once '../config.php';
         <div class="navbar-fixed">
             <nav class="brown darken-2" role="navigation">
                 <div class="nav-wrapper container">
-                    <a id="logo-container" href="./Main.php" class="brand-logo"><img src="../Material/asset/Logo/cinnamon2.png" height="50px"></a>
+                    <a id="logo-container" href="./Main.php?user=<?= $user ?>" class="brand-logo"><img src="../Material/asset/Logo/cinnamon2.png" height="50px"></a>
                     <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a class="card-panel brown-text text-darken-2 waves-effect waves-light btn" style="margin-top:6%;background-color:#EAD0A9 ;" href="Form.php"> Upload resep</a></li>
-                        <li><a class="brown-text text-lighten-5" href="Cari.php">Cari Resep</a></li>
-                        <li><a class="brown-text text-lighten-5" href="Badget.php">Budget</a></li>
-                        <li><a class="brown-text text-lighten-5" href="Bahan.php">Bahan</a></li>
+                        <li><a class="card-panel brown-text text-darken-2 waves-effect waves-light btn" style="margin-top:6%;background-color:#EAD0A9 ;" href="Form.php?user=<?= $user ?>"> Upload resep</a></li>
+                        <li><a class="brown-text text-lighten-5" href="Cari.php?user=<?= $user ?>">Cari Resep</a></li>
+                        <li><a class="brown-text text-lighten-5" href="Badget.php?user=<?= $user ?>">Budget</a></li>
+                        <li><a class="brown-text text-lighten-5" href="Bahan.php?user=<?= $user ?>">Bahan</a></li>
                         <li>
-                            <a class="brown-text text-lighten-5" href="../index.html">
+                            <a class="brown-text text-lighten-5" href="../Login/logout.php">
                                 <b>Keluar</b>
                             </a>
                         </li>
