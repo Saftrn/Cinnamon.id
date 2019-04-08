@@ -18,9 +18,9 @@ if (mysqli_num_rows($result) != 0) {
 
     if (password_verify($password, $row['password'])) {
 
-        $_SESSION['username'] = $username;
+        $user = $_SESSION['username'] = $username;
         // die($_SESSION['username']);
-        header('location:../../../../Cinnamon.id/user/Main.php');
+        header('location:../../../../Cinnamon.id/user/Main.php?user=' . $user);
     } else {
         header('location: Login.php?status=gagal');
     }

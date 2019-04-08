@@ -23,18 +23,31 @@ if (isset($_GET['rating'])) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../Material/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="../Material/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="../Material/css/public.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link rel="stylesheet" href="../Material/css/fontawesome-stars.css">
 
 
     <style>
+        .background {
+            background-image: url("../Material/asset/putih.jpg");
+            background-attachment: fixed;
+        }
+
         .fa-star {
             font-size: 2em;
         }
 
         .checked {
             color: #f3d032;
+        }
+
+        .kotak {
+            margin-top: 10px;
+            margin-bottom: 0px;
+            border: 5px solid #683F1E;
+            border-radius: 15px;
+            height: 215px;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -74,23 +87,43 @@ if (isset($_GET['rating'])) {
                 </a>
             </li>
         </ul>
-
         <div class="container">
-            <div class="kotak z-depth-4 white" style="height:">
-                <div class="container">
-                    <h4 class="brown-text text-darken-4"><b>Cari Data Resep</b></h4>
-                    <form action="utama.php" method="get">
-                        <div class="input-field col s12">
-                            <input class="brown-text text-darken-4" id="kataKunci" name="cariResep" type="text">
-                            <label for="mulai">Masukan judul</label>
+            <?php
+            $dataFeedback = mysqli_query($connect, "SELECT * FROM feedback");
+
+            if (mysqli_num_rows($dataFeedback) == 0) {
+                echo "<h1> Tidak ada Feedback</h1>";
+            } else {
+                while ($nilai = mysqli_fetch_assoc($dataFeedback)) {
+
+                    ?>
+
+
+
+
+                    <div class="feed">
+                        <br><br>
+                        <div class="kotak z-depth-4 white" style="width:100%">
+                            <div class="container">
+                                <br>
+                                <h5 class="brown-text text-darken-4"><b><?= $nilai['username'] ?></b></h5>
+                                <p><?= $nilai['feedback'] ?></p>
+                            </div>
                         </div>
-                        <input class="btn brown darken-2" type="submit" value="cari" style="width:100%;">
-                    </form>
-                </div>
+
+
+                    <?php
+                }
+            }
+            ?>
             </div>
+
+
+
+
         </div>
 
-        <br><br><br><br><br>
+        <br><br>
         <!--  Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="../Material/js/materialize.js"></script>

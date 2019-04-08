@@ -22,7 +22,7 @@ require_once "../config.php";
             <a class="waves-effect brown darken-3 waves-light btn-large" href="Main.php" style="margin-top:5%;"><i class="material-icons left">arrow_backk</i>kembali</a>
             <h3>Send Feedback</h3>
             <div class="utama"><br>
-                <form action="feedback.php" method="post">
+                <form action="" method="post">
                     <div class="row">
                         <div class="input-field col s11">
                             <input id="tips" type="text" class="validate" name="feedback">
@@ -35,11 +35,19 @@ require_once "../config.php";
     </div>
 
     <?php
-    if (isset($_POST['upload'])) {
-        $feedback = $_POST['feedback'];
-        $query = "INSERT INTO feedback(feedback) VALUES('$feedback')";
-        mysqli_query($connect, $query);
-        header('location:Main.php?status=202');
+
+    if (isset($_GET['user'])) {
+
+        $username = $_GET['user'];
+
+        if (isset($_POST['upload'])) {
+            $feedback = $_POST['feedback'];
+            $query = "INSERT INTO feedback(feedback, username) VALUES('$feedback','$username')";
+            // var_dump($query);
+            // exit;
+            mysqli_query($connect, $query);
+            header('location:Main.php?status=202');
+        }
     }
 
 

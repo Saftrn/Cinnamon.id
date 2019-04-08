@@ -50,7 +50,7 @@ if (isset($_GET['rating'])) {
                         <li><a class="brown-text text-lighten-5" href="../Resep/Badget.html">Budget</a></li>
                         <li><a class="brown-text text-lighten-5" href="../Resep/Bahan.html">Bahan</a></li>
                         <li>
-                            <a class="brown-text text-lighten-5" href="#">
+                            <a class="brown-text text-lighten-5" href="../index.html">
                                 <b>About Us</b>
                             </a>
                         </li>

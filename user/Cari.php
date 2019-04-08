@@ -112,26 +112,24 @@ require_once '../config.php';
                 <div class="row">
                     <div class="col l6 s12">
                         <h5 class="white-text">Cinnamon</h5>
-                        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                        <p class="grey-text text-lighten-4">Kami adalah tim mahasiswa yang mengerjakan proyek ini seperti ini adalah pekerjaan penuh waktu kami. Jumlah berapa pun akan membantu mendukung dan melanjutkan pengembangan proyek ini dan sangat dihargai.</p>
 
 
                     </div>
                     <div class="col l3 s12">
-                        <h5 class="white-text">Settings</h5>
+                        <h5 class="white-text">Sosial Media</h5>
                         <ul>
-                            <li><a class="white-text" href="#!">Link 1</a></li>
-                            <li><a class="white-text" href="#!">Link 2</a></li>
-                            <li><a class="white-text" href="#!">Link 3</a></li>
-                            <li><a class="white-text" href="#!">Link 4</a></li>
-                        </ul>
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Connect</h5>
-                        <ul>
-                            <li><a class="white-text" href="#!">Link 1</a></li>
-                            <li><a class="white-text" href="#!">Link 2</a></li>
-                            <li><a class="white-text" href="#!">Link 3</a></li>
-                            <li><a class="white-text" href="#!">Link 4</a></li>
+                            <li><a class="white-text" href="#!">email</a></li>
+                            <li><a class="white-text" href="#!">facebook</a></li>
+                            <li><a class="white-text" href="#!">instagram</a></li>
+                            <li>
+                                <?php
+                                if (isset($_GET['user'])) $user = $_GET['user'];
+                                ?>
+                                <a class="white-text" href="feedback.php?user=<?= $user ?>">
+                                    <h6><b>feedback</b></h6>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

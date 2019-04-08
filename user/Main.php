@@ -195,7 +195,10 @@ require_once '../config.php';
                         <li><a class="white-text" href="#!">facebook</a></li>
                         <li><a class="white-text" href="#!">instagram</a></li>
                         <li>
-                            <a class="white-text" href="feedback.php">
+                            <?php
+                            if (isset($_GET['user'])) $user = $_GET['user'];
+                            ?>
+                            <a class="white-text" href="feedback.php?user=<?= $user ?>">
                                 <h6><b>feedback</b></h6>
                             </a>
                         </li>
