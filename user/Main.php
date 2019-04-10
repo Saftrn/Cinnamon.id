@@ -27,12 +27,12 @@ if (isset($_GET['user'])) $user = $_GET['user'];
         }
 
         .red {
-            background-image: url("../Material/asset/annie-spratt-743648-unsplash.jpg");
+            background-image: url("../Material/asset/todd-quackenbush-700-unsplash.jpg");
             background-size: cover;
         }
 
         .amber {
-            background-image: url("../Material/asset/todd-quackenbush-700-unsplash.jpg");
+            background-image: url("../Material/asset/annie-spratt-743648-unsplash.jpg");
             background-size: cover;
         }
 
@@ -104,20 +104,20 @@ if (isset($_GET['user'])) $user = $_GET['user'];
                     <div class="carousel-fixed-item center">
                     </div>
                     <div class="carousel-item red white-text" href="#one!">
-                        <h2><b>Kegunaan Rempah Untuk Kesehatan Jantung</b></h2>
-                        <p class="white-text">Pentingnya menjaga kondisi jantung tetap sehat adalah sesuatu yang tidak perlu dijelaskan lagi. Sayangnya, saat ini banyak sekali orang yang kurang memperhatikan kesehatan jantung mereka...</p>
+                        <h2><b>Meredakan sakit kepala dengan Minyak Peppermint</b></h2>
+                        <p class="white-text">Minyak peppermint memiliki efek menenangkan yang luar biasa saat Anda sedang mengalami pusing. Mampu membantu mengurangi ketidaknyamanan dan menjernihkan pikiran. Anda bisa melakukannya di berbagai tempat. Kalau Anda memiliki kulit yang sensitif dan mudah iritasi, Anda bisa coba menggunakan minyak peppermint dengan sedikit minyak zaitun dan air.TMenjaga kesehatan ternyata tidak sulit. Cukup dengan konsumsi beberapa rempah berikut ini...</p>
                     </div>
                     <div class="carousel-item amber white-text" href="#two!">
-                        <h2><b>5 Rempah Ini Ampuh untuk Menjaga Kesehatan</b></h2>
-                        <p class="white-text">TMenjaga kesehatan ternyata tidak sulit. Cukup dengan konsumsi beberapa rempah berikut ini...</p>
+                        <h2><b>Kapulaga, rempah ajaib untuk kesehatan jantung</b></h2>
+                        <p class="white-text">Rempah satu ini mungkin lebih dikenal karena kemampuannya untuk mengatasi penyakit pencernaan, seperti mual, muntah, mulas dan diare.</p>xml_error_string
                     </div>
                     <div class="carousel-item green white-text" href="#three!">
-                        <h2><b>5 Alasan Makanan Olahan Bisa Merusak Kesehatan</b></h2>
-                        <p class="white-text">Makanan olahan praktis dan umumnya lezat. Namun, konsumsinya tidak dianjurkan. Ada beberapa alasan kenapa makanan bisa merusak kesehatan...</p>
+                        <h2><b>Konsumsi Kalsium untuk Tulang yang Kuat</b></h2>
+                        <p class="white-text">Jumlah kalsium yang direkomendasikan untuk orang dewasa adalah 1000 mg perhari. Sedangkan untuk yang berusia 50 tahun ke atas disarankan sebanyak 1200 gram perhari.</p>
                     </div>
                     <div class="carousel-item blue white-text" href="#four!">
-                        <h2><b>8 Manfaat Air Tebu untuk Kesehatan</b></h2>
-                        <p class="white-text">Selain rasanya yang segar, air tebu juga memiliki banyak manfaat bagi kesehatan tubuh. Simak penjelasannya berikut ini...</p>
+                        <h2><b>Pola Makan untuk Gaya Hidup Sehat Agar Usia Lebih Panjang</b></h2>
+                        <p class="white-text">Kunyah makanan secara perlahan, krangi makan camilan, hindari terlalu sering order makanan dari luar, kurangi konsumsi garam, hindari minum soda</p>
                     </div>
                 </div>
                 <br>

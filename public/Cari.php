@@ -11,7 +11,7 @@ require_once '../config.php';
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cinnamon - Online Website Resep</title>
-    <link rel="shortcut icon" type="image/png" href="./Material/asset/Logo/icon.png" />
+    <link rel="shortcut icon" type="image/png" href="../Material/asset/Logo/icon.png" />
 
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

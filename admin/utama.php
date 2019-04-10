@@ -28,12 +28,12 @@ require_once '../config.php';
         }
 
         .red {
-            background-image: url("../Material/asset/annie-spratt-743648-unsplash.jpg");
+            background-image: url("../Material/asset/todd-quackenbush-700-unsplash.jpg");
             background-size: cover;
         }
 
         .amber {
-            background-image: url("../Material/asset/todd-quackenbush-700-unsplash.jpg");
+            background-image: url("../Material/asset/annie-spratt-743648-unsplash.jpg");
             background-size: cover;
         }
 
@@ -101,27 +101,27 @@ require_once '../config.php';
         <div class="section transparent" style="padding-bottom:0px">
             <div class="row container">
                 <br><br>
-                <!--<div class="carousel carousel-slider center">
+                <div class="carousel carousel-slider center">
                     <div class="carousel-fixed-item center">
-                         <a class="btn waves-effect pink darken-1 white-text" href="artikel.php">edit Tips</a>
+                        <button class="btn waves-effect white grey-text darken-text-2" id="edit">Edit</button>
                     </div>
                     <div class="carousel-item red white-text" href="#one!">
-                        <h2><b>Kegunaan Rempah Untuk Kesehatan Jantung</b></h2>
-                        <p class="white-text">Pentingnya menjaga kondisi jantung tetap sehat adalah sesuatu yang tidak perlu dijelaskan lagi. Sayangnya, saat ini banyak sekali orang yang kurang memperhatikan kesehatan jantung mereka</p>
+                        <h2 id="judulTips" contenteditable="true"><b>Meredakan sakit kepala dengan Minyak Peppermint</b></h2>
+                        <p class="white-text" id="deskripsiTips" contenteditable="true">Minyak peppermint memiliki efek menenangkan yang luar biasa saat Anda sedang mengalami pusing. Mampu membantu mengurangi ketidaknyamanan dan menjernihkan pikiran. Anda bisa melakukannya di berbagai tempat. Kalau Anda memiliki kulit yang sensitif dan mudah iritasi, Anda bisa coba menggunakan minyak peppermint dengan sedikit minyak zaitun dan air.Menjaga kesehatan ternyata tidak sulit.</p>
                     </div>
                     <div class="carousel-item amber white-text" href="#two!">
-                        <h2><b>Jahe ampuh untuk meningkatkan stamina</b></h2>
-                        <p class="white-text">keunggulan dari rempah jahe yang dapat meningkatkan stamina dan juga menjaga kesehatan</p>
+                        <h2 id="judulTips" contenteditable="true"><b>Kapulaga, rempah ajaib untuk kesehatan jantung</b></h2>
+                        <p class="white-text" id="deskripsiTips" contenteditable="true">Rempah satu ini mungkin lebih dikenal karena kemampuannya untuk mengatasi penyakit pencernaan, seperti mual, muntah, mulas dan diare.</p>
                     </div>
                     <div class="carousel-item green white-text" href="#three!">
-                        <h2><b>5 Alasan Makanan Olahan Bisa Merusak Kesehatan</b></h2>
-                        <p class="white-text">Makanan olahan praktis dan umumnya lezat. Namun, konsumsinya tidak dianjurkan. Ada beberapa alasan kenapa makanan bisa merusak kesehatan...</p>
+                        <h2 id="judulTips" contenteditable="true"><b>Konsumsi Kalsium untuk Tulang yang Kuat</b></h2>
+                        <p class="white-text" id="deskripsiTips" contenteditable="true">Jumlah kalsium yang direkomendasikan untuk orang dewasa adalah 1000 mg perhari. Sedangkan untuk yang berusia 50 tahun ke atas disarankan sebanyak 1200 gram perhari.</p>
                     </div>
                     <div class="carousel-item blue white-text" href="#four!">
-                        <h2><b>8 Manfaat Air Tebu untuk Kesehatan</b></h2>
-                        <p class="white-text">Selain rasanya yang segar, air tebu juga memiliki banyak manfaat bagi kesehatan tubuh. Simak penjelasannya berikut ini...</p>
+                        <h2 id="judulTips" contenteditable="true"><b>Pola Makan untuk Gaya Hidup Sehat Agar Usia Lebih Panjang</b></h2>
+                        <p class="white-text" id="deskripsiTips" contenteditable="true">Kunyah makanan secara perlahan, krangi makan camilan, hindari terlalu sering order makanan dari luar, kurangi konsumsi garam, hindari minum soda</p>
                     </div>
-                </div>-->
+                </div>
                 <br>
                 <div class="kotak z-depth-4 white" style="height:">
                     <div class="container">
@@ -221,26 +221,21 @@ require_once '../config.php';
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Cinnamon</h5>
-                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                    <p class="grey-text text-lighten-4">Kami adalah tim mahasiswa yang mengerjakan proyek ini seperti ini adalah pekerjaan penuh waktu kami. Jumlah berapa pun akan membantu mendukung dan melanjutkan pengembangan proyek ini dan sangat dihargai.</p>
 
 
                 </div>
                 <div class="col l3 s12">
-                    <h5 class="white-text">Settings</h5>
+                    <h5 class="white-text">Sosial Media</h5>
                     <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Connect</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
+                        <li><a class="white-text" href="#!">email</a></li>
+                        <li><a class="white-text" href="#!">facebook</a></li>
+                        <li><a class="white-text" href="#!">instagram</a></li>
+                        <li>
+                            <a class="white-text" href="feedback.php?user=<?= $user ?>">
+                                <h6><b>feedback</b></h6>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -291,6 +286,28 @@ require_once '../config.php';
 
             });
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const editButton = document.getElementById('edit');
+            editButton.addEventListener('click', () => {
+                const judulTips = document.querySelector('#judulTips');
+                const deskripsiTips = document.querySelector('#deskripsiTips');
+
+                // Simpan menggunakan ajax
+                let ajax = new XMLHttpRequest();
+                ajax.onload = function() {
+                    console.log(this.responseText);
+                };
+
+                ajax.open("POST", "proses_edit_tips.php", true);
+                ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                // const judul = judulTips.textContent;
+                // const tips = deskripsiTips.textContent;
+                ajax.send("judul=" + judulTips.textContent + "&tips=" + deskripsiTips.textContent);
+            })
+
+        })
     </script>
     <!-- <script>
         $('.kotak').click((event) => {
