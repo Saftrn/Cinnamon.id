@@ -109,7 +109,7 @@ if (isset($_GET['user'])) $user = $_GET['user'];
                     </div>
                     <div class="carousel-item amber white-text" href="#two!">
                         <h2><b>Kapulaga, rempah ajaib untuk kesehatan jantung</b></h2>
-                        <p class="white-text">Rempah satu ini mungkin lebih dikenal karena kemampuannya untuk mengatasi penyakit pencernaan, seperti mual, muntah, mulas dan diare.</p>xml_error_string
+                        <p class="white-text">Rempah satu ini mungkin lebih dikenal karena kemampuannya untuk mengatasi penyakit pencernaan, seperti mual, muntah, mulas dan diare.</p>
                     </div>
                     <div class="carousel-item green white-text" href="#three!">
                         <h2><b>Konsumsi Kalsium untuk Tulang yang Kuat</b></h2>
@@ -176,8 +176,6 @@ if (isset($_GET['user'])) $user = $_GET['user'];
         } ?>
             <br><br><br>
         </div>
-
-        <br><br><br>
 
     </div>
     <footer class="page-footer brown darken-2">

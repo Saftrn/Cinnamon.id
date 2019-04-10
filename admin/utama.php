@@ -103,7 +103,7 @@ require_once '../config.php';
                 <br><br>
                 <div class="carousel carousel-slider center">
                     <div class="carousel-fixed-item center">
-                        <button class="btn waves-effect white grey-text darken-text-2" id="edit">Edit</button>
+                        <button class="btn waves-effect pink darken-1 white-text" id="edit">Edit</button>
                     </div>
                     <div class="carousel-item red white-text" href="#one!">
                         <h2 id="judulTips" contenteditable="true"><b>Meredakan sakit kepala dengan Minyak Peppermint</b></h2>
@@ -213,33 +213,9 @@ require_once '../config.php';
             <br><br><br>
         </div>
 
-        <br><br><br>
-
     </div>
     <footer class="page-footer brown darken-2">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Cinnamon</h5>
-                    <p class="grey-text text-lighten-4">Kami adalah tim mahasiswa yang mengerjakan proyek ini seperti ini adalah pekerjaan penuh waktu kami. Jumlah berapa pun akan membantu mendukung dan melanjutkan pengembangan proyek ini dan sangat dihargai.</p>
 
-
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Sosial Media</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">email</a></li>
-                        <li><a class="white-text" href="#!">facebook</a></li>
-                        <li><a class="white-text" href="#!">instagram</a></li>
-                        <li>
-                            <a class="white-text" href="feedback.php?user=<?= $user ?>">
-                                <h6><b>feedback</b></h6>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="footer-copyright">
             <div class="container">
                 Made by <a class="brown-text text-lighten-3" href="#">Flavor</a>
