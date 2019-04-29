@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    let user = document.getElementById('user');
     let katakunci = document.getElementById('kataKunci');
     let cari = document.getElementById('cari');
     let dataResep = document.getElementById('dataresep');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
 
-        ajax.open('GET', 'dataresep.php?page=' + page + '&cariResep=' + katakunci.value, true);
+        ajax.open('GET', 'dataresep.php?user=' + user + '&page=' + page + '&cariResep=' + katakunci.value, true);
         ajax.send();
     }
 

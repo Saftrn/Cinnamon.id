@@ -80,6 +80,7 @@ if (isset($_GET['user'])) $user = $_GET['user'];
                 <form action="cari.php" method="get">
                     <div class="row">
                         <div class="input-field col s12">
+                            <input type="hidden" name="user" id="user" value="<?php $user ?>">
                             <input class="brown-text text-darken-4" id="kataKunci" name="cariResep" type="text">
                             <label for="mulai">Masukan judul</label>
                         </div>
